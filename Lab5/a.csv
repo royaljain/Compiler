@@ -1,0 +1,41 @@
+class abstract_astnode
+		list<abstract_astnode *> statement_list;
+		abstract_astnode *exp1;
+		abstract_astnode *exp2;
+		abstract_astnode *exp3;
+		abstract_astnode *statement;
+		typeExp astnode_type;
+class for_node :  public abstract_astnode {
+    for_node(abstract_astnode *e1,abstract_astnode *e2, abstract_astnode *e3, abstract_astnode *s);
+class while_node :  public abstract_astnode {
+    while_node(abstract_astnode *e1, abstract_astnode *s);
+class if_node :  public abstract_astnode {
+    if_node(abstract_astnode *e1,abstract_astnode *s1, abstract_astnode *s2);
+class return_node :  public abstract_astnode {
+    return_node(abstract_astnode *e1);
+class block_node :  public abstract_astnode {
+    block_node(abstract_astnode *stmt_list);
+class seq_node :  public abstract_astnode {
+    seq_node(abstract_astnode* s); 
+    seq_node(list<abstract_astnode*> l,abstract_astnode* s);    
+    void add(abstract_astnode* s);
+class ass_node :  public abstract_astnode {
+    ass_node(abstract_astnode *e1,abstract_astnode *e2);
+class unary_op_node : public abstract_astnode{
+    unary_op_node(string op , abstract_astnode op);
+class funcall_node : public abstract_astnode{
+    funcall_node(id,list<abstract_astnode *> exp);
+class binary_op_node : public abstract_astnode{
+    binary_op_node(abstract_astnode op1 ,string op ,abstract_astnode op2);
+class float_const_node : public abstract_astnode{
+    float_const_node(string str);
+class int_const_node : public abstract_astnode{
+    int_const_node(string str);
+class string_const_node : public abstract_astnode{
+    string_const_node(string str);
+class index_node : public abstract_astnode{
+    index_node(abstract_astnode * lexp1,abstract_astnode * exp1);
+class identifier_node : public abstract_astnode{
+    identifier_node(string id);
+class empty_node : public abstract_astnode{
+    empty_node();

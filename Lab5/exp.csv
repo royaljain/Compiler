@@ -1,0 +1,20 @@
+for_node(abstract_astnode *e1,abstract_astnode *e2, abstract_astnode *e3, abstract_astnode *s);
+while_node(abstract_astnode *e1, abstract_astnode *s);   
+if_node(abstract_astnode *e1,abstract_astnode *s1, abstract_astnode *s2);  
+return_node(abstract_astnode *e1);     
+block_node(abstract_astnode *stmt_list);     
+seq_node(abstract_astnode* s);     
+seq_node(list<abstract_astnode*> l,abstract_astnode* s);    
+ass_node(abstract_astnode *e1,abstract_astnode *e2);    
+unary_op_node(string op , abstract_astnode op);  
+funcall_node(id,list<abstract_astnode *> exp);    
+binary_op_node(abstract_astnode op1 ,string op ,abstract_astnode op2); 
+float_const_node(string str);     
+int_const_node(string str);     
+string_const_node(string str);     
+index_node(abstract_astnode * lexp1,abstract_astnode * exp1);  
+identifier_node(string id);     
+empty_node();      
+
+
+void add(abstract_astnode* s);    

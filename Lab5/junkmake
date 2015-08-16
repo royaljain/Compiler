@@ -1,0 +1,35 @@
+FLOAT
+void a()
+{
+ pushi(ebp);
+move(esp,ebp);
+move(2,ebx);
+storei(ebx,ind(ebp,8));
+loadi(ind(ebp), ebp);
+popi(1);
+return;
+}
+ void main()
+{
+ addi(-4,esp);
+move(ebp,ebx);
+addi(-4,ebx);
+pushi(ebx);
+move(1,ebx);
+loadi(ind(esp),eax);
+popi(1);
+storei(ebx,ind(eax));
+pushi(0);
+loadi(ind(ebp,-4),ebx);
+intTofloat(ebx);
+pushf(ebx);
+a();
+popi(1);
+loadi(ind(esp),ebx);
+popi(1);
+move(0,ebx);
+storei(ebx,ind(ebp,4));
+popi(1);
+return;
+}
+ 

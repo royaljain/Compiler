@@ -1,0 +1,9 @@
+void main()
+{
+ addi(-4,esp);
+move(0,ebx);
+storei(ebx,ind(ebp,4));
+popi(1);
+return;
+}
+ 

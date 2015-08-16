@@ -1,0 +1,5 @@
+(Block  [(For (Assign_exp (Id "x")(IntConst 0))(LT (Id "x")(IntConst 10))(PP(Id "x"))(Empty))
+(If (GT (Id "y")(IntConst 1))(Block  [(Ass (Id "x")(Minus (Id "x")(IntConst 1)))
+(Ass (Id "y")(Plus (Id "y")(IntConst 1)))
+])(Empty))
+])

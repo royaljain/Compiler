@@ -1,0 +1,48 @@
+Not printing AST of main
+cast2 FLOAT
+Symbol tables 
+main#0
+Id: main#0,type: int,offset: 0,parameters : false
+localsymbolTable : 
+a
+Id: a,type: int,offset: 8,width: 4,
+b
+Id: b,type: float,offset: 12,width: 4,
+
+
+void main#0()
+{
+ addi(-4,esp);
+addi(-4,esp);
+move(1,ebx);
+storei(ebx,ind(ebp,8));
+move(2,ebx);
+storef(ebx,ind(ebp,12));
+loadi(ind(ebp,8),ebx);
+pushi(ebx);
+move(1,ebx);
+loadi(ind(esp),eax);
+popi(1);
+cmpi(eax,ebx);
+je(l0);
+move(0,ebx);
+j(l1);
+l0: move(1,ebx);
+cmpi(ebx,0);
+je(l2);
+loadf(ind(ebp,12),ebx);
+storei(ebx,ind(ebp,8));
+j(l3);
+l2:;
+loadi(ind(ebp,8),ebx);
+pushi(ebx);
+loadf(ind(ebp,12),ebx);
+loadi(ind(esp),eax);
+popi(1);
+intTofloat(eax);
+addf(eax,ebx);
+storei(ebx,ind(ebp,8));
+l3:;
+return;
+}
+ 
